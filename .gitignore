@@ -1,0 +1,8 @@
+.env
+/login_page/firebase.json
+.DS_Store
+# Django
+db.sqlite3
+/static/
+media/
+local_settings.py
