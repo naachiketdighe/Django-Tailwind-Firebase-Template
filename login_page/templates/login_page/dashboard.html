@@ -1,10 +1,30 @@
 {% load static tailwind_tags %}
+<!DOCTYPE html>
 <html>
-  <body class="bg-base-200 flex items-center justify-center min-h-screen">
-    {% tailwind_css %}
-    <div class="card w-96 bg-base-100 shadow-xl p-8">
-      <h2 class="text-2xl font-bold mb-4">Welcome!</h2>
-      <p>You have successfully signed in.</p>
+<head>
+  {% tailwind_css %}
+</head>
+<body class="bg-base-200 min-h-screen">
+
+  <!-- Navbar Start -->
+  <nav class="navbar bg-base-100 shadow mb-8 px-4">
+    <div class="flex-1">
+      <a href="{% url 'home' %}" class="btn btn-ghost text-xl">Company Name</a>
     </div>
-  </body>
+    <div class="flex-none space-x-4">
+      <a href="{% url 'home' %}"      class="btn btn-ghost">Home</a>
+      <a href="{% url 'find_bar' %}"  class="btn btn-ghost">Find Event</a>
+      <a href="{% url 'host_bar' %}"  class="btn btn-ghost">Host Event</a>
+      <a href="{% url 'friends' %}"   class="btn btn-ghost">Friends</a>
+      <span class="font-bold text-base-content">{{ user_email }}</span>
+    </div>
+  </nav>
+  <!-- Navbar End -->
+
+  <div class="card w-96 bg-base-100 shadow-xl p-8 mx-auto">
+    <h2 class="text-2xl font-bold mb-4">Welcome!</h2>
+    <p>You have successfully signed in.</p>
+  </div>
+
+</body>
 </html>
